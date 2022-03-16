@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country | Paris</title>
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="scrollBar1"></div>
+    <div id="scrollPath1"></div>
+    <!-- start section  -->
+    <div class="page-paris">
+        <div class="section-paris">
+            <input type="radio" name="slider">
+            <div class="imgBx">
+                <img src="image/paris-statistics-banner.jpg">
+                <div class="content">
+                    <h2>Country Paris</h2>
+                </div>
+            </div>
+            <input type="radio" name="slider">
+            <div class="imgBx">
+                <img src="image/paris-eiffel-tower-dinner-with-river-cruise-t7589-014_copy.jpg">
+                <div class="content">
+                    <h2>Country Paris</h2>
+                </div>
+            </div>
+            <input type="radio" name="slider">
+            <div class="imgBx">
+                <img src="image/Paris-Montparnasse-Champagnet7051-003.jpg">
+                <div class="content">
+                    <h2>Country Paris</h2>
+                </div>
+            </div>
+            <input type="radio" name="slider">
+            <div class="imgBx">
+                <img src="image/Paris-Seine-River-Cruise-t1775-022.jpg">
+                <div class="content">
+                    <h2>Country Paris</h2>
+                </div>
+            </div>
+            <input type="radio" name="slider">
+            <div class="imgBx">
+                <img src="image/versailles_bike_tour_with_palace_amp_queen_farm_entrance-paris-t46332-10.jpg">
+                <div class="content">
+                    <h2>Country Paris</h2>
+                </div>
+            </div>
+        </div>
+        <div class="section-content-paris">
+            <h2>Information about the country of Paris</h2>
+            <div class="information">
+                <p>There’s a reason Paris is one of the most popular cities among travelers. Known as the “City of Light” or the
+                    “City of Love,” the streets of Paris overflow with culture, art, beauty, and history. Whether searching out
+                    Monet’s Water Lilies at Musée de l’Orangerie, climbing the many steps of Sacré-Cœur, standing before the
+                    Eiffel Tower in awe, or searching out the best crepes along the Seine, Paris is a city that captures the
+                    hearts of millions ever year.</p>
+                <ul>
+                    <li>The Eiffel Tower was supposed to be a temporary installation, intended to stand for 20 years after being
+                        built for the 1889 World Fair.</li>
+                    <li>Paris was originally a Roman City called “Lutetia.”</li>
+                    <li>It’s believed that Paris only has one stop sign in the entire city.</li>
+                    <li>A flat in Paris was left unoccupied under lock and key for 70 years, but the rent was paid every month;
+                        when the renter passed away, a painting by Boldini valued at more than $2 million was found inside.</li>
+                    <li>There are at least three replicas of the Statue of Liberty in Paris. The most famous of them exists on
+                        an island in the middle of the Seine and looks towards her sister statue in New York.</li>
+                    <li>The main bell of the Notre Dame Cathedral is named Emmanuel and weighs over 13 tonnes.</li>
+                    <li>There are 6,100 rues – or streets – in Paris; the shortest one, Rue des Degrés, is just 5.75 metres long
+                        and can be found in the 2nd arrondissement.</li>
+                </ul>
+                <p>Before deciding on a schedule for your stay, you will have to ask yourself which things are a must for you.
+                    Is your priority to explore the city? If so, we advise you to check out well-known guides such as Le guide
+                    du routard or the Lonely Planet, which provide optimized self-guided tours ranging from 1 to several days,
+                    enabling you to take in all the must-see sights in a short amount of time.
+                    You can also use the Paris l’Open Tour (tour buses) which cover four routes across the capital all day with
+                    commentary in 8 languages. From 9.30 am to 6.30 pm they travel between many stops, picking up and dropping
+                    off every 10 to 25 minutes.
+                    Otherwise, you can always do what takes your fancy and simply explore the town on foot, or climb aboard one
+                    of the legendary “bateaux-mouches” which offer a magnificent view of the city from the Seine.</p>
+                <p>Paris, city and capital of France, situated in the north-central part of the country. People were living on
+                    the site of the present-day city, located along the Seine River some 233 miles (375 km) upstream from the
+                    river’s mouth on the English Channel (La Manche), by about 7600 BCE. The modern city has spread from the
+                    island (the Île de la Cité) and far beyond both banks of the Seine.</p>
+                <p>Paris occupies a central position in the rich agricultural region known as the Paris Basin, and it
+                    constitutes one of eight départements of the Île-de-France administrative region. It is by far the country’s
+                    most important centre of commerce and culture. Area city, 41 square miles (105 square km); metropolitan
+                    area, 890 square miles (2,300 square km). Pop. (2012) city, 2,265,886; (2015 est.) urban agglomeration,
+                    10,858,000.</p>
+            </div>
+            <span id="span" style="display: block;"></span>
+            <a href="#" onclick="toggle();">Watch Trailer</a>
+        </div>
+        <div class="trailer">
+            <video src="video/paris.mp4" controls="true"></video>
+            <img src="image/close.png" alt="image-close" onclick="toggle();">
+        </div>
+    </div>
+    <!-- link jquery -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- link bootstrap -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- link javascript -->
+    <script src="js/fontAwesome.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('span').addEventListener('click', function(){
+            document.querySelector('.section-content-paris').classList.toggle('active');
+        })
+        function toggle() {
+            var trailer = document.querySelector('.trailer');
+            trailer.classList.toggle('active');
+            video.pause();
+            video.currentTime = 0;
+        }
+    </script>
+</body>
+
+</html>

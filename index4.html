@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>country | thailand</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="page-thailand">
+        <div class="section-thailand">
+            <div class="content">
+                <h2>Country Thailand</h2>
+                <p>Thailand is a Southeast Asian country. It's known for tropical beaches, opulent royal palaces,
+                    ancient ruins and ornate temples displaying figures of Buddha. In Bangkok, the capital, an
+                    ultramodern cityscape rises next to quiet canalside communities and the iconic temples of Wat Arun,
+                    Wat Pho and the Emerald Buddha Temple (Wat Phra Kaew)</p>
+            </div>
+            <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#111" fill-opacity="1"
+                    d="M0,96L26.7,117.3C53.3,139,107,181,160,170.7C213.3,160,267,96,320,96C373.3,96,427,160,480,154.7C533.3,149,587,75,640,80C693.3,85,747,171,800,176C853.3,181,907,107,960,106.7C1013.3,107,1067,181,1120,186.7C1173.3,192,1227,128,1280,112C1333.3,96,1387,128,1413,144L1440,160L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+        <div class="section-thailand-content">
+            <h2>Information About Country Thailand</h2>
+            <div class="paragrah">
+                <p>Thailand, country located in the centre of mainland Southeast Asia. Located wholly within the tropics,
+                    Thailand encompasses diverse ecosystems, including the hilly forested areas of the northern frontier,
+                    the fertile rice fields of the central plains, the broad plateau of the northeast, and the rugged coasts
+                    along the narrow southern peninsula.</p>
+                <p>Until the second half of the 20th century, Thailand was primarily an agricultural country, but since the
+                    1960s increasing numbers of people have moved to Bangkok, the capital, and to other cities. Although the
+                    greater Bangkok metropolitan area remains the preeminent urban centre in the country, there are other
+                    sizable cities, such as Chiang Mai in the north, Nakhon Ratchasima (Khorat), Khon Kaen, and Udon Thani
+                    in the northeast, Pattaya in the southeast, and Hat Yai in the far south.</p>
+                <h3>Land of Thailand</h3>
+                <p class="land">Thailand, which has about the same land area as Spain or France, consists of two broad
+                    geographic areas:
+                    a larger main section in the north and a smaller peninsular extension in the south. The main body of the
+                    country is surrounded by Myanmar (Burma) to the west, Laos to the north and east, Cambodia to the
+                    southeast, and the Gulf of Thailand to the south. Peninsular Thailand stretches southward from the
+                    southwestern corner of the country along the eastern edge of the Malay Peninsula; Myanmar extends along
+                    the western portion of the peninsula as far as the Isthmus of Kra, after which Thailand occupies the
+                    entire peninsula until reaching its southern border with Malaysia at roughly latitude 6° N.</p>
+                <h3>Relief</h3>
+                <p class="land">Thailand’s landscapes vary from low mountains to fertile alluvial plains dotted with rice
+                    paddies to sandy beaches set amid the equatorial latitudes of the Asian monsoons. The country is divided
+                    into five distinct physiographic regions: the folded mountains in the north and west, the Khorat Plateau
+                    in the northeast, the Chao Phraya River basin in the centre, the maritime corner of the central region
+                    in the southeast, and the long, slender peninsular portion in the southwest.</p>
+                <h3>Plant and animal life</h3>
+                <p class="land">Thailand is a country of forests, shrub-studded grasslands, and swampy wetlands dotted with
+                    lotuses and water lilies. Since the mid-20th century, the total land area covered by forests has
+                    declined from more than half to less than one-third. Forest clearing for agriculture (including for tree
+                    plantations), excessive logging, and poor management are the main causes of this decline. Forests
+                    consist largely of such hardwoods as teak and timber- and resin-producing trees of the Dipterocarpaceae
+                    family. As elsewhere in Southeast Asia, bamboo, palms, rattan, and many kinds of ferns are common. Where
+                    forests have been logged and not replanted, a secondary growth of grasses and shrubs has sprung up that
+                    often limits land use for farming. Lotuses and water lilies dot most ponds and swamps throughout the
+                    country.</p>
+            </div>
+            <span id="span" style="display: block;"></span>
+            <a href="#" onclick="toggle();">Watch Trailer</a>
+        </div>
+        <div class="trailer">
+            <video src="video/thailand.mp4" controls="true"></video>
+            <img src="image/close.png" alt="image-close" onclick="toggle();">
+        </div>
+    </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/fontAwesome.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+        document.getElementById('span').addEventListener('click', function(){
+            document.querySelector('.section-thailand-content').classList.toggle('active');
+        })
+        function toggle() {
+            var trailer = document.querySelector('.trailer');
+            trailer.classList.toggle('active');
+            video.pause();
+            video.currentTime = 0;
+        }
+    </script>
+</body>
+
+</html>

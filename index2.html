@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countries / India</title>
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="scrollBar1"></div>
+    <div id="scrollPath1"></div>
+    <!-- start section london -->
+    <div class="page-india">
+        <div class="section-india">
+            <div class="side" id="side1"></div>
+            <div class="side" id="side2"></div>
+        </div>
+        <div class="content">
+            <h2>Information about the country of India</h2>
+            <p>India is in the eye of the energy transition storm. No other country must balance the challenges of
+                implementing so many power sector reforms while expanding energy access to hundreds of millions of
+                people. All of this is happening in a time of unrivaled innovations in energy technologies and rapidly
+                changing business models and economics of energy production and delivery. The International Energy
+                Agency’s (IEA) recently released India Energy Outlook reaffirms this, stating that India is “at the
+                center of global energy demand moving forward.” With understandable pressure to bring bold targets to
+                the table at this year’s UN climate change conference (COP26), India may join other Asian nations in
+                announcing a net-zero carbon emissions target. Leveraging the IEA’s latest scenarios, partner nations
+                need to be prepared to design bilateral energy partnerships that meaningfully meet India’s net-zero
+                moment. For the United States, here are some steps to forge a new partnership.
+            </p>
+            <p>U.S.-India energy cooperation has a long history and has seen cooperation on many fronts, including
+                civil-nuclear cooperation, the fossil fuel sector, as well as a focus on renewable energy technologies
+                and grid infrastructure. These efforts have served their purpose well, given the time in which they were
+                operating. However, the changing landscape of energy economics and technological and business model
+                innovation, along with the urgent imperative to act on climate, requires re-casting the pillars of
+                cooperation with some new strategies that will benefit both parties in navigating the transition
+                together.</p>
+            <ul>
+                <li>Activate a working group on critical minerals and supply chains. According to the IEA, $1 out of
+                    every $7 spent worldwide on solar, wind, and energy storage technologies will be spent in India by
+                    2040. Given that India’s new energy security concerns will stem from powering its energy transition,
+                    a concern shared by partners making up the Quadrilateral Security Dialogue, activating the recently
+                    announced working group focused on developing and processing supplies and supply chains of critical
+                    rare earth minerals should proceed immediately. A starting point for discussions could be
+                    determining how the United States and allied partners can develop these supply chains, which are
+                    currently dominated by China. The dialogue will also require the participation of trade and commerce
+                    agencies to chart a pathway of least conflict that ensures equitable sharing of opportunities from
+                    the explosion of this new industry.</li>
+                <li>Change the coal working group into a working group on the coal transition. There was a time to aid
+                    India in the buildup of its coal-powered energy generation assets. But that was when India did not
+                    have enough power to meet its demand; coal was the cheapest source of electricity for the country,
+                    with no viable alternatives on the horizon; and air pollution, water stress, and climate action
+                    concerns surrounding the coal value chain were not as acute. That time is long gone. According to
+                    the IEA, the future of thermal coal in India is set to decline to 30 percent of the electricity
+                    generation mix, from 70 percent, by 2040. Additional analysis from EMBER suggests that coal-fired
+                    generation may have peaked in 2018 and on-grid coal capacity could crest in the next five years both
+                    due to the Covid-19 electricity demand shock and India’s commitment to meeting its stated renewable
+                    energy and old thermal power plant phasedown targets.</li>
+            </ul>
+            <p>As it is, the United States does not have a Ministry of Coal to match dialogue with India’s, and its own
+                coal industry has seen rapid decline. While there is of course still a need to engage India’s coal
+                sector in water and air pollution management, power plant flexibility, and efficiency of resource use, a
+                stronger partnership would be one that aid’s India’s coal sector, and her coal-rich states, in making a
+                transition. Such a dialogue could focus on:</p>
+            <ul>
+                <li>Developing coal transition readiness assessments; establishing an institutional mechanism that will
+                    drive an action plan, which should include structuring financial packages and strategies for
+                    coal-dependent communities such as securing pensions; establishing new skilling and training
+                    programs; and rebuilding communities in decline.</li>
+                <li>Preparing business transition plans, informed by analysis such as that started by scholars at
+                    Imperial College, for state-owned enterprises such as Coal India Limited, which has already started
+                    to diversify its business into renewables, and Indian Railways, which is dependent on coal transport
+                    revenue but has itself declared a net-zero carbon emissions target.</li>
+                <li>A new U.S.-India utility-to-utility partnership to jump-start the conversation and planning for
+                    gradual phaseout of coal for not only state-owned power generation and distribution utilities but
+                    also private players such as Tata Power, JSW Energy, and Adani. U.S. utilities devising such plans
+                    including Xcel Energy and NextEra could be key partners to involve.</li>
+                <li>A regulator-to-regulator subnational dialogue on the matter to dovetail with the utility partnership
+                    to create a supportive policy regime that can help coal plants provide flexibility during the time
+                    of transition.</li>
+                <li>Leaders from coal-value chain dependent states in both the United States and India should be part of
+                    the dialogue as they navigate the need to balance state budgets with shrinking revenues from the
+                    sector and the need to set up new institutions and regulations to manage the transition.</li>
+            </ul>
+            <a href="#" onclick="toggle();">Watch Trailer</a>
+        </div>
+        <div class="trailer">
+            <video src="video/Jana Gana Mana - National Anthem -.mp4" controls="true"></video>
+            <img src="image/close.png" alt="image-close" onclick="toggle();">
+        </div>
+    </div>
+    <!-- link jquery -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- link bootstrap -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- link javascript -->
+    <script src="js/fontAwesome.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+        // split Banner on Page Scroll
+        var side1 = document.getElementById("side1")
+        window.addEventListener("scroll", function () {
+            side1.style.left = -window.pageYOffset + 'px';
+        })
+        var side2 = document.getElementById("side2")
+        window.addEventListener("scroll", function () {
+            side2.style.left = window.pageYOffset + 'px';
+        })
+        function toggle() {
+            var trailer = document.querySelector('.trailer');
+            trailer.classList.toggle('active');
+            video.pause();
+            video.currentTime = 0;
+        }
+    </script>
+</body>
+
+</html>

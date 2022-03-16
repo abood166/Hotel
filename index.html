@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels and countries</title>
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <!-- chatBot -->
+    <link rel="stylesheet" href="css/jquery.convform.css">
+</head>
+
+<body>
+    <div id="scrollBar1"></div>
+    <div id="scrollPath1"></div>
+    <!-- start notification -->
+    <div class="notify-alert-box">
+        <img src="image/logo.png">
+        <p>We'd like to send you notifications of the latest posts and updates</p>
+        <div class="buttons">
+            <button id="notify-cancel-button">Cancel</button>
+            <button id="notify-button">Allow</button>
+        </div>
+    </div>
+    <!-- start preloader -->
+    <div class="preloader">
+        <div class="counter">0</div>
+    </div>
+    <!-- start scroll-top -->
+    <div class="scroll-top" onclick="scrollToTop();">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <!-- chatBot -->
+    <div class="chat_icon">
+        <i class="fas fa-comments"></i>
+    </div>
+    <div class="chat_box">
+        <div class="conv-form-wrapper">
+            <form action="" method="get" class="hidden">
+                <select name="category" data-conv-question="Hello! How can I help you">
+                    <option value="webDevelopment">Website Development ?</option>
+                    <option value="digitalMarketing">Digital Marketing ?</option>
+                </select>
+                <div data-conv-fork="category">
+                    <div data-conv-case="Website Development ?">
+                        <input type="text" name="domain_name" data-conv-question="Please, tell me your domain name">
+                    </div>
+                </div>
+                <div data-conv-fork="category">
+                    <div data-conv-case="Digital Marketing ?">
+                        <input type="text" name="company_name" data-conv-question="Please, tell me your company name">
+                    </div>
+                </div>
+                <input type="text" name="domain_name" data-conv-question="Please, tell me your domain name">
+                <input data-conv-question="Type in your e-mail"
+                    data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                    id="email" type="email" name="email" required placeholder="What's your e-mail?">
+                <input data-conv-question="Now tell me a secret (like a password)" type="password" data-minlength="6"
+                    id="senha" name="password" required placeholder="password">
+                <select data-conv-question="Selects also support callback functions. For example, try one of these:">
+                    <option value="google" data-callback="google">Google</option>
+                    <option value="bing" data-callback="bing">Bing</option>
+                </select>
+                <select name="callbackTest"
+                    data-conv-question="You can do some cool things with callback functions. Want to rollback to the 'programmer' question before?">
+                    <option value="yes" data-callback="rollback">Yes</option>
+                    <option value="no" data-callback="restore">No</option>
+                </select>
+                <select
+                    data-conv-question="This is it! If you like me, consider donating! If you need support, contact me. When the form gets to the end, the plugin submits it normally, like you had filled it."
+                    id="">
+                    <option value="">Awesome!</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    <!-- chatBot -->
+    <!-- start section icons -->
+    <div class="section-icons">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-sm-12 right">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8">
+                            <h3><span><i class="fas fa-user"
+                                style="padding-right: 10px; font-size: 19px; color: #118f8b;"></i></span> <span id="name-users">Abdullah Bdwan</span>
+                                <span id="phone-user">0592495890</span></h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 left">
+                    <div class="icons">
+                        <div>
+                            <a href="#" class="btn2" onclick="popupToggle()">Rate the site</a>
+                            <a href="#" class="btn2" onclick="popupToggle2()">Login</a>
+                        </div>
+                        <div class="popup" id="popup">
+                            <div class="container">
+                                <div class="post">
+                                    <div class="text">Thanks for rating us!</div>
+                                    <div class="edit">edit</div>
+                                </div>
+                                <div class="star-widget">
+                                    <input type="radio" name="rate" id="rate-5" class="rate">
+                                    <label for="rate-5" class="fas fa-star"></label>
+                                    <input type="radio" name="rate" id="rate-4" class="rate">
+                                    <label for="rate-4" class="fas fa-star"></label>
+                                    <input type="radio" name="rate" id="rate-3" class="rate">
+                                    <label for="rate-3" class="fas fa-star"></label>
+                                    <input type="radio" name="rate" id="rate-2" class="rate">
+                                    <label for="rate-2" class="fas fa-star"></label>
+                                    <input type="radio" name="rate" id="rate-1" class="rate">
+                                    <label for="rate-1" class="fas fa-star"></label>
+                                    <form action="#">
+                                        <div class="header"></div>
+                                        <div class="textarea">
+                                            <textarea cols="30" placeholder="Describe your experience..."></textarea>
+                                        </div>
+                                        <div class="btn3">
+                                            <button type="submit">Post</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <a class="close" onclick="popupToggle()"><i class="fas fa-times"></i></a>
+                        </div>
+                        <div id="popup2" class="popup">
+                            <div class="content">
+                                <h1>Login Form</h1>
+                                <div class="progress-bar2">
+                                    <div class="step">
+                                        <p>Name</p>
+                                        <div class="bullet">
+                                            <span>1</span>
+                                        </div>
+                                        <div class="check fas fa-check"></div>
+                                    </div>
+                                    <div class="step">
+                                        <p>Contact</p>
+                                        <div class="bullet">
+                                            <span>2</span>
+                                        </div>
+                                        <div class="check fas fa-check"></div>
+                                    </div>
+                                    <div class="step">
+                                        <p>Birth</p>
+                                        <div class="bullet">
+                                            <span>3</span>
+                                        </div>
+                                        <div class="check fas fa-check"></div>
+                                    </div>
+                                    <div class="step">
+                                        <p>Submit</p>
+                                        <div class="bullet">
+                                            <span>4</span>
+                                        </div>
+                                        <div class="check fas fa-check"></div>
+                                    </div>
+                                </div>
+                                <div class="form-outer">
+                                    <form action="#" name="form">
+                                        <div class="page slidepage">
+                                            <div class="title">Basic Info:</div>
+                                            <div class="field">
+                                                <div class="label">First Name</div>
+                                                <input type="text" name="firstName" id="firstName">
+                                            </div>
+                                            <div class="field">
+                                                <div class="label">Last Name</div>
+                                                <input type="text" name="lastName" id="lastName">
+                                            </div>
+                                            <div class="field nextBtn">
+                                                <button>Next</button>
+                                            </div>
+                                        </div>
+                                        <div class="page">
+                                            <div class="title">Contact Info:</div>
+                                            <div class="field emailBox inputBox">
+                                                <div class="label">Email Address</div>
+                                                <input type="text" id="email" onkeydown="validationEmail()">
+                                                <span id="email-text"></span>
+                                            </div>
+                                            <div class="field passBox inputBox">
+                                                <div class="label">Password</div>
+                                                <input type="password" id="password" onkeydown="validationPassword()">
+                                                <span id="pass-text"></span>
+                                            </div>
+                                            <div class="field btns">
+                                                <button class="prev-1 prev">Previous</button>
+                                                <button class="next-1 next">Next</button>
+                                            </div>
+                                        </div>
+                                        <div class="page">
+                                            <div class="title">Date of Birth:</div>
+                                            <div class="field">
+                                                <div class="label">Date</div>
+                                                <input type="text">
+                                            </div>
+                                            <div class="field">
+                                                <div class="label">Gender</div>
+                                                <select>
+                                                    <option>Male</option>
+                                                    <option>Female</option>
+                                                    <option>Other</option>
+                                                </select>
+                                            </div>
+                                            <div class="field btns">
+                                                <button class="prev-2 prev">Previous</button>
+                                                <button class="next-2 next">Next</button>
+                                            </div>
+                                        </div>
+                                        <div class="page">
+                                            <div class="title">Login Details:</div>
+                                            <div class="field">
+                                                <div class="label">Username</div>
+                                                <input type="text">
+                                            </div>
+                                            <div class="field">
+                                                <div class="label">phone Number</div>
+                                                <input type="text" id="phone">
+                                            </div>
+                                            <div class="field btns">
+                                                <button class="prev-3 prev">Previous</button>
+                                                <button class="Submit">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <a class="close" onclick="popupToggle2()"><i class="fas fa-times"></i></a>
+                        </div>
+                        <div class="toggle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end section icons -->
+    <!-- start header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="imgBx">
+                <img src="image/logo.png" class="logo">
+            </div>
+            <div class="menu-toggle"></div>
+            <div class="collapse navbar-collapse">
+                <ul class="ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hotels">Hotels</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tours">Tours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#packeges">Packeges</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#review">Reviews</a>
+                    </li>
+                    <li class="nav-item contact">
+                        <a class="nav-link" href="#contact">contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="section-form">
+            <div class="container">
+                <form autocomplete="off" action="">
+                    <div class="autocomplete" style="width:300px;">
+                        <input id="myInput" type="text" name="myCountry" placeholder="Type..." value="">
+                    </div>
+                    <input type="submit" value="Search" id="search">
+                </form>
+            </div>
+        </div>
+    </header>
+    <!-- start section hotels -->
+    <div class="section-hotels" id="hotels">
+        <div class="container">
+            <h2 class="title" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:500px;">Top Hotels
+            </h2>
+            <p data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-500px;">Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Ipsam, nostrum autem totam consequatur ad
+                fugit.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0; left:-400px;">
+                    <div class="imgBx">
+                        <img class="card-img-top" src="image/hotel1.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel Room</h5>
+                        <p class="card-text">price: <span>$400</span></p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card" data-center-center="opacity:1;bottom:0;" data-0-bottom="opacity:0; bottom:-500px;">
+                    <div class="imgBx">
+                        <img class="card-img-top" src="image/hotel2.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel Room</h5>
+                        <p class="card-text">price: <span>$250</span></p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card" data-center-center="opacity:1;top:0;" data-0-bottom="opacity:0; top:-500px;">
+                    <div class="imgBx">
+                        <img class="card-img-top" src="image/hotels3.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel Room</h5>
+                        <p class="card-text">price: <span>$600</span></p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:0; right:-500px;">
+                    <div class="imgBx">
+                        <img class="card-img-top" src="image/hotel4.webp" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel Room</h5>
+                        <p class="card-text">price: <span>$1500</span></p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start section tours -->
+    <div class="section-tours" id="tours">
+        <div class="container">
+            <h2 class="title" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:500px;">Top Tours
+            </h2>
+            <p data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-500px;">Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Ipsam, nostrum autem totam consequatur ad
+                fugit.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card" data-center-center="opacity:1;top:0;" data-0-bottom="opacity:0;top:100px;">
+                    <div class="imageBx">
+                        <img src="image/india.jpg">
+                        <div class="inform">
+                            <h4>India</h4>
+                            <span>1-items</span>
+                        </div>
+                        <div class="content">
+                            <h2>India</h2>
+                            <p>India, officially the Republic of India, is a country in South Asia. It is the
+                                seventh-largest country by area, the second-most populous country, and the most populous
+                                democracy in the world</p>
+                            <a href="index2.html"><button class="button1">ReadMore...</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card" data-center-center="opacity:1;top:0;" data-0-bottom="opacity:0;top:200px;">
+                    <div class="imageBx">
+                        <img src="image/paris.jpg">
+                        <div class="inform">
+                            <h4>Paris</h4>
+                            <span>2-items</span>
+                        </div>
+                        <div class="content">
+                            <h2>Paris</h2>
+                            <p>Paris, France's capital, is a major European city and a global center for art, fashion,
+                                gastronomy and culture. Its 19th-century cityscape is crisscrossed by wide boulevards
+                                and the River Seine.</p>
+                            <a href="index3.html"><button class="button1">ReadMore...</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card" data-center-center="opacity:1;top:0;" data-0-bottom="opacity:0;top:300px;">
+                    <div class="imageBx">
+                        <img src="image/Thiland.jpg">
+                        <div class="inform">
+                            <h4>Thailand</h4>
+                            <span>3-items</span>
+                        </div>
+                        <div class="content">
+                            <h2>Thailand</h2>
+                            <p>Thailand is a Southeast Asian country. It's known for tropical beaches, opulent royal
+                                palaces, ancient ruins and ornate temples displaying figures of Buddha.</p>
+                            <a href="index4.html"><button class="button1">ReadMore...</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card" data-center-center="opacity:1;top:0;" data-0-bottom="opacity:0;top:400px;">
+                    <div class="imageBx">
+                        <img src="image/australia.jpg">
+                        <div class="inform">
+                            <h4>australia</h4>
+                            <span class="active">4-items</span>
+                        </div>
+                        <div class="content">
+                            <h2>australia</h2>
+                            <p>Australia, officially the Commonwealth of Australia, is a sovereign country comprising
+                                the mainland of the Australian continent, the island of Tasmania, and numerous smaller
+                                islands.</p>
+                            <a href="index5.html"><button class="button1">ReadMore...</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start section packeges -->
+    <div class="section-packeges" id="packeges">
+        <div class="container">
+            <h2 class="title" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:500px;">Top Packeges
+            </h2>
+            <p data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-500px;">Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Ipsam, nostrum autem totam consequatur ad
+                fugit.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-500px;">
+                    <div class="imgBx">
+                        <img class="card-img-top active" src="image/packege1.jpg" alt="Card image cap"
+                            style="height: 250px;">
+                    </div>
+                    <div class="card-body">
+                        <span class="span1">lorem</span>
+                        <h5 class="card-title">Bali Indonesia</h5>
+                        <p class="card-text">Lorem, ipsum dolor.</p>
+                        <div>
+                            <span class="ent">&#9829;</span>2
+                            <span class="ent">&#9829;</span>3
+                            <span class="ent">&#9829;</span>lorem
+                        </div>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card" data-center-center="opacity:1;bottom:0;" data-0-bottom="opacity:0;bottom:-500px;">
+                    <div class="imgBx">
+                        <img class="card-img-top" src="image/packege2.jpg" alt="Card image cap" style="height: 250px;">
+                    </div>
+                    <div class="card-body">
+                        <span class="span1">lorem</span>
+                        <h5 class="card-title">Bali Indonesia</h5>
+                        <p class="card-text">Lorem, ipsum dolor.</p>
+                        <div>
+                            <span class="ent">&#9829;</span>2
+                            <span class="ent">&#9829;</span>3
+                            <span class="ent">&#9829;</span>lorem
+                        </div>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:0;right:-500px;">
+                    <div class="imgBx">
+                        <img class="card-img-top" src="image/packege3.jpg" alt="Card image cap" style="height: 250px;">
+                    </div>
+                    <div class="card-body">
+                        <span class="span1">lorem</span>
+                        <h5 class="card-title">Bali Indonesia</h5>
+                        <p class="card-text">Lorem, ipsum dolor.</p>
+                        <div>
+                            <span class="ent">&#9829;</span>2
+                            <span class="ent">&#9829;</span>3
+                            <span class="ent">&#9829;</span>lorem
+                        </div>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start section review -->
+    <div class="section-review" id="review">
+        <h2 data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:500px;">Top Reviews</h2>
+        <div class="wrapper" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-500px;">
+            <div class="carousel owl-carousel">
+                <div class="card card-1">
+                    <div class="card-body">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, ullam laboriosam.
+                            Dolore, a! Provident, molestiae.</p>
+                    </div>
+                    <div class="inform">
+                        <div class="imgBx">
+                            <img src="image/abdullah.png">
+                        </div>
+                        <div class="name">
+                            <h5>Abdullah Bdwan</h5>
+                            <span>0592495890</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-2">
+                    <div class="card-body">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, ullam laboriosam.
+                            Dolore, a! Provident, molestiae.</p>
+                    </div>
+                    <div class="inform">
+                        <div class="imgBx">
+                            <img src="image/abdullah.png">
+                        </div>
+                        <div class="name">
+                            <h5>Abdullah Bdwan</h5>
+                            <span>0592495890</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-3">
+                    <div class="card-body">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, ullam laboriosam.
+                            Dolore, a! Provident, molestiae.</p>
+                    </div>
+                    <div class="inform">
+                        <div class="imgBx">
+                            <img src="image/abdullah.png">
+                        </div>
+                        <div class="name">
+                            <h5>Abdullah Bdwan</h5>
+                            <span>0592495890</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-4">
+                    <div class="card-body">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, ullam laboriosam.
+                            Dolore, a! Provident, molestiae.</p>
+                    </div>
+                    <div class="inform">
+                        <div class="imgBx">
+                            <img src="image/abdullah2.jpeg">
+                        </div>
+                        <div class="name">
+                            <h5>Abdullah Bdwan</h5>
+                            <span>0592580467</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-5">
+                    <div class="card-body">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, ullam laboriosam.
+                            Dolore, a! Provident, molestiae.</p>
+                    </div>
+                    <div class="inform">
+                        <div class="imgBx">
+                            <img src="image/abdullah2.jpeg">
+                        </div>
+                        <div class="name">
+                            <h5>Abdullah Bdwan</h5>
+                            <span>0592580467</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-6">
+                    <div class="card-body">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, ullam laboriosam.
+                            Dolore, a! Provident, molestiae.</p>
+                    </div>
+                    <div class="inform">
+                        <div class="imgBx">
+                            <img src="image/abdullah2.jpeg">
+                        </div>
+                        <div class="name">
+                            <h5>Abdullah Bdwan</h5>
+                            <span>0592580467</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start section-image-icons -->
+    <div class="section-image-icons">
+        <div class="section-icons" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:500px;">
+            <i class="fas fa-phone-alt"></i>
+            <i class="fab fa-whatsapp floating-wpp" id="myDiv"></i>
+            <i class="fab fa-telegram-plane"></i>
+        </div>
+        <div class="section-image">
+            <div class="imgBx" data-center-center="opacity:1;top:0;" data-0-bottom="opacity:0;top:100px;">
+                <img src="image/IATA.jpg">
+            </div>
+            <div class="imgBx" data-center-center="opacity:1;top:0;" data-0-bottom="opacity:0;top:150px;">
+                <img src="image/EIB.png">
+            </div>
+            <div class="imgBx" data-center-center="opacity:1;top:0;" data-0-bottom="opacity:0;top:200px;">
+                <img src="image/ariazone.png">
+            </div>
+            <div class="imgBx" data-center-center="opacity:1;top:0;" data-0-bottom="opacity:0;top:250px;">
+                <img src="image/farmbetter.png">
+            </div>
+            <div class="imgBx" data-center-center="opacity:1;top:0;" data-0-bottom="opacity:0;top:300px;">
+                <img src="image/visa.jfif">
+            </div>
+            <div class="imgBx" data-center-center="opacity:1;top:0;" data-0-bottom="opacity:0;top:350px;">
+                <img src="image/equp.gif">
+            </div>
+        </div>
+    </div>
+    <!-- start footer -->
+    <div class="footer" id="contact">
+        <div class="imgBx" data-center-center="opacity:1;top:0;" data-0-bottom="opacity:0;top:500px;">
+            <img src="image/logo.png">
+        </div>
+        <div class="row" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:500px;">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div id="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d108792.4529883211!2d34.704083437310665!3d31.558074948850415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2s!4v1638290244025!5m2!1sar!2s"
+                        style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="inform" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:0;right:500px;">
+                    <div class="inform-body">
+                        <span>Terms & condition</span>
+                        <h5 class="active1"><i class="fas fa-tty"></i> +2 02 3305 4770</h5>
+                    </div>
+                    <div class="inform-body">
+                        <span>B2B</span>
+                        <h5 class="active2"><i class="fas fa-mobile-alt"></i> +972 59 249 5890</h5>
+                    </div>
+                    <div class="inform-body">
+                        <span>Servies</span>
+                        <h5 class="active3"><i class="far fa-envelope"></i> abdallahbdwan9@gmail.com</h5>
+                    </div>
+                    <div class="inform-body">
+                        <span>Blog</span>
+                        <h5 class="active4"><i class="fas fa-paperclip"></i> www.raalours.com</h5>
+                    </div>
+                    <div class="inform-body">
+                        <span></span>
+                        <h5 class="active5"><i class="fas fa-map-marker-alt"></i> Palestine, Gaza, DairAlpalh</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- link jquery -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- link bootstrap -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- link javascript -->
+    <script src="js/fontAwesome.js"></script>
+    <script src="js/jquery.convform.js"></script>
+    <script src="js/map.js" defer></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script>
+        autocomplete(document.getElementById("myInput"), countries);
+    </script>
+    <script src="js/skrollr.js"></script>
+    <script type="text/javascript">
+        var s = skrollr.init();
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
