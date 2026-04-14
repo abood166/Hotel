@@ -1,16 +1,51 @@
 // need to make a function that gets rid of the preloader
-function counter () {
-    var count = setInterval(function () {
-        var c = parseInt($('.counter').text());
-        $('.counter').text((++c).toString());
-        if (c == 100) {
-            clearInterval(count);
-            $('.counter').addClass('hide')
-            $('.preloader').addClass('active')
-        }
-    },60)
-}
-counter()
+$(window).on("load", function () {
+
+    // Skip if already shown in this session
+    if (sessionStorage.getItem("preloaderShown")) {
+        $(".preloader").hide();
+        return;
+    }
+
+    let images = $("img");
+    let total = images.length;
+    let loaded = 0;
+
+    // If no images exist
+    if (total === 0) {
+        finishLoading();
+        return;
+    }
+
+    function updateProgress() {
+        let percent = Math.round((loaded / total) * 100);
+        $(".counter").text(percent);
+    }
+
+    images.each(function () {
+        let img = new Image();
+        img.src = $(this).attr("src");
+
+        img.onload = img.onerror = function () {
+            loaded++;
+            updateProgress();
+
+            if (loaded === total) {
+                finishLoading();
+            }
+        };
+    });
+
+    function finishLoading() {
+        setTimeout(function () {
+            $(".counter").addClass("hide");
+            $(".preloader").addClass("active");
+
+            sessionStorage.setItem("preloaderShown", "true");
+        }, 300);
+    }
+
+});
 // creative page mouse-scroll Progress Bar
 let cursorMeter = document.getElementById('cursorMeter');
 document.addEventListener('mousemove', function (e) {
@@ -142,129 +177,221 @@ btn.onclick = function () {
     }
 }
 // make  a model and make a login  and check input and check email and password
+const popup2 = document.getElementById('popup2');
+
 function popupToggle2() {
-    const popup2 = document.getElementById('popup2');
     popup2.classList.toggle('active');
 }
+
+// ================== FORM ELEMENTS ==================
 const slidepage = document.querySelector(".slidepage");
+
 const firstNextBtn = document.querySelector(".nextBtn");
-const prevBtnSec = document.querySelector(".prev-1");
 const nextBtnSec = document.querySelector(".next-1");
-const prevBtnThird = document.querySelector(".prev-2");
 const nextBtnThird = document.querySelector(".next-2");
+
+const prevBtnSec = document.querySelector(".prev-1");
+const prevBtnThird = document.querySelector(".prev-2");
 const prevBtnFourth = document.querySelector(".prev-3");
+
 const submitBtn = document.querySelector(".Submit");
+
 const progressText = document.querySelectorAll(".step p");
 const progressCheck = document.querySelectorAll(".step .check");
 const bullet = document.querySelectorAll(".step .bullet");
-let max = 4;
+
 let current = 1;
+
+// ================== VALIDATION FUNCTIONS ==================
+function isValidEmail(email) {
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    return pattern.test(email);
+}
+
+function isValidPassword(password) {
+    let pattern = /^[A-Za-z]\w{7,14}$/;
+    return pattern.test(password);
+}
+
+// ================== STEP 1 ==================
 firstNextBtn.addEventListener("click", function () {
+
+    let firstName = document.getElementById("firstName").value;
+    let lastName = document.getElementById("lastName").value;
+
+    if (firstName === "" || lastName === "") {
+        alert("Please enter First and Last name");
+        return;
+    }
+
     slidepage.style.marginLeft = "-25%";
+
     bullet[current - 1].classList.add("active");
     progressText[current - 1].classList.add("active");
     progressCheck[current - 1].classList.add("active");
-    current += 1;
+
+    current++;
 });
+
+// ================== STEP 2 ==================
 nextBtnSec.addEventListener("click", function () {
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    if (!isValidEmail(email)) {
+        alert("Invalid Email");
+        return;
+    }
+
+    if (!isValidPassword(password)) {
+        alert("Invalid Password");
+        return;
+    }
+
     slidepage.style.marginLeft = "-50%";
+
     bullet[current - 1].classList.add("active");
     progressText[current - 1].classList.add("active");
     progressCheck[current - 1].classList.add("active");
-    current += 1;
+
+    current++;
 });
+
+// ================== STEP 3 ==================
 nextBtnThird.addEventListener("click", function () {
+
     slidepage.style.marginLeft = "-75%";
+
     bullet[current - 1].classList.add("active");
     progressText[current - 1].classList.add("active");
     progressCheck[current - 1].classList.add("active");
-    current += 1;
+
+    current++;
 });
-submitBtn.addEventListener("click", function () {
-    bullet[current - 1].classList.add("active");
-    progressText[current - 1].classList.add("active");
-    progressCheck[current - 1].classList.add("active");
-    current += 1;
-    setTimeout(function () {
-        const firstName = document.getElementById("firstName").value;
-        const lastName = document.getElementById("lastName").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-        let phone = document.getElementById('phone').value;
-        let nameUser = document.getElementById('name-users');
-        let phoneUser = document.getElementById('phone-user');
-        phoneUser.innerHTML = phone;
-        nameUser.innerHTML = "Hello " + firstName + " " + lastName;
-        confirm("You are confirm email and password");
-        alert(firstName + " " + lastName + " successfully Signed up"  + "     Email: " + email + "     Password: " + password);
-        // location.reload();
-    }, 800);
+
+// ================== SUBMIT ==================
+submitBtn.addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    let user = {
+        firstName: document.getElementById("firstName").value,
+        lastName: document.getElementById("lastName").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value,
+        phone: document.getElementById("phone").value
+    };
+
+    // Save user in localStorage
+    localStorage.setItem("user", JSON.stringify(user));
+
+    alert("User saved successfully!");
+
+    // Update UI
+    document.getElementById("name-users").innerText =
+        "Hello " + user.firstName + " " + user.lastName;
+
+    document.getElementById("phone-user").innerText = user.phone;
+
+    popup2.classList.remove("active");
 });
+
+// ================== LOAD USER ==================
+window.addEventListener("load", function () {
+
+    let user = localStorage.getItem("user");
+
+    if (user) {
+        user = JSON.parse(user);
+
+        document.getElementById("name-users").innerText =
+            "Hello " + user.firstName + " " + user.lastName;
+
+        document.getElementById("phone-user").innerText = user.phone;
+    }
+
+});
+
+// ================== PREVIOUS BUTTONS ==================
 prevBtnSec.addEventListener("click", function () {
     slidepage.style.marginLeft = "0%";
+
     bullet[current - 2].classList.remove("active");
     progressText[current - 2].classList.remove("active");
     progressCheck[current - 2].classList.remove("active");
-    current -= 1;
+
+    current--;
 });
+
 prevBtnThird.addEventListener("click", function () {
     slidepage.style.marginLeft = "-25%";
+
     bullet[current - 2].classList.remove("active");
     progressText[current - 2].classList.remove("active");
     progressCheck[current - 2].classList.remove("active");
-    current -= 1;
+
+    current--;
 });
+
 prevBtnFourth.addEventListener("click", function () {
     slidepage.style.marginLeft = "-50%";
+
     bullet[current - 2].classList.remove("active");
     progressText[current - 2].classList.remove("active");
     progressCheck[current - 2].classList.remove("active");
-    current -= 1;
+
+    current--;
 });
+
+// ================== LIVE VALIDATION UI ==================
 function validationEmail() {
     var emailBox = document.querySelector('.emailBox');
     var email = document.getElementById("email").value;
     var emailText = document.getElementById("email-text");
+
     var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
     if (email.match(pattern)) {
         emailBox.classList.add("valid");
         emailBox.classList.remove("invalid");
-        emailText.innerHTML = "Your Email Address in valid.";
+        emailText.innerHTML = "Valid Email";
         emailText.style.color = "#00ff00";
     } else {
-        emailBox.classList.remove("valid");
         emailBox.classList.add("invalid");
-        emailText.innerHTML = "Please Enter Valid Email Address";
+        emailBox.classList.remove("valid");
+        emailText.innerHTML = "Invalid Email";
         emailText.style.color = "#ff0000";
     }
-    if (email == "") {
-        emailBox.classList.remove("valid");
-        emailBox.classList.remove("invalid");
+
+    if (email === "") {
+        emailBox.classList.remove("valid", "invalid");
         emailText.innerHTML = "";
-        emailText.style.color = "#00ff00";
     }
 }
+
 function validationPassword() {
     var passBox = document.querySelector(".passBox");
     var password = document.getElementById("password").value;
     var passText = document.getElementById("pass-text");
-    var passPattern = /^[A-Za-z]\w{7,14}$/;
-    if (password.match(passPattern)) {
+
+    var pattern = /^[A-Za-z]\w{7,14}$/;
+
+    if (password.match(pattern)) {
         passBox.classList.add("valid");
         passBox.classList.remove("invalid");
-        passText.innerHTML = "Your Password in valid";
+        passText.innerHTML = "Valid Password";
         passText.style.color = "#00ff00";
     } else {
-        passBox.classList.remove("valid");
         passBox.classList.add("invalid");
-        passText.innerHTML = "Please Enter valid password ";
+        passBox.classList.remove("valid");
+        passText.innerHTML = "Invalid Password";
         passText.style.color = "#ff0000";
     }
-    if (password == '') {
-        passBox.classList.remove("valid");
-        passBox.classList.remove("invalid");
+
+    if (password === "") {
+        passBox.classList.remove("valid", "invalid");
         passText.innerHTML = "";
-        passText.style.color = "#00ff00";
     }
 }
 
@@ -517,8 +644,3 @@ $(".carousel").owlCarousel({
         }
     }
 })
-
-
-
-
-

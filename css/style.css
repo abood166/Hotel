@@ -2430,6 +2430,7 @@ body.dark .footer .row .inform span{
 .section-india #side2{
     clip-path: polygon(100% 0%, 66% 0%, 31% 16%, 63% 29%, 25% 40%, 64% 44%, 28% 58%, 65% 65%, 23% 76%, 62% 90%, 27% 97%, 56% 100%, 100% 100%);
 }
+
 .page-india .content{
     background: #000;
     color: #fff;
@@ -2437,24 +2438,53 @@ body.dark .footer .row .inform span{
 }
 .page-india .content h2{
     position: relative;
-    font-size: 5em;
+    font-size: 3em;
     text-align: center;
     text-transform: capitalize;
     color: #04befe;
+    margin-bottom: 20px;
 }
 .page-india .content p{
     position: relative;
-    font-size: 1.4em;
+    font-size: 1em;
 }
 .page-india .content ul li{
     list-style-type: square;
     line-height: 5fr;
     margin-left: 50px;
     padding: 10px 7px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #cecdcd;
 }
+@media (max-width: 920px) {
+    .page-india .content{
+        padding: 150vh 50px 10vh;
+    }
+    .page-india .content h2{
+        font-size: 2.5em;;
+    }
+    .page-india .content p{
+        font-size: 16px;
+    }
+    .page-india .content ul li{
+        font-size: 16px;
+    }
+}
 
+@media (max-width: 600px) {
+    .page-india .content{
+        padding: 150vh 20px 10vh;
+    }
+    .page-india .content h2{
+        font-size: 2em;;
+    }
+    .page-india .content p{
+        font-size: 14px;
+    }
+    .page-india .content ul li{
+        font-size: 14px;
+    }
+}
 
 /* *************** common characteristics styling *************** */
 .page-india .content a, .section-content-paris  a, .section-thailand-content a, .section2-australia a{
@@ -2567,10 +2597,6 @@ body.dark .footer .row .inform span{
     line-height: 1em;
     color: #111;
 }
-.section-paris .imgBx .content p{
-    font-size: 1.1em;
-    color: #111;
-}
 .section-paris input[type="radio"]{
     position: relative;
     z-index: 1000;
@@ -2607,7 +2633,7 @@ body.dark .footer .row .inform span{
 }
 .section-content-paris h2{
     text-align: center;
-    font-size: 5em;
+    font-size: 3em;
     line-height: 1.2;
     font-weight: 500;
     color: #04befe;
@@ -2654,12 +2680,58 @@ body.dark .footer .row .inform span{
     margin-bottom: 20px;
     margin-top: 0;
 }
+@media (max-width: 920px) {
+    .section-paris .imgBx{
+        padding: 40px;
+    }
+    .section-paris .imgBx .content h2{
+        font-size: 5em;
+    }
+    .section-content-paris{
+        padding: 60px 70px 100px;
+    }
+    .section-content-paris h2{
+        font-size: 2.5em;
+    }
+    .section-content-paris p{
+        font-size: 1.1em;
+    }
+}
 @media (max-width: 768px) {
     .section-paris .imgBx{
         padding: 40px;
     }
     .section-paris .imgBx .content h2{
         font-size: 3em;
+    }
+    .section-content-paris{
+        padding: 60px 50px 100px;
+    }
+    .section-content-paris h2{
+        font-size: 2em;
+    }
+    .section-content-paris p{
+        font-size: 16px;
+    }
+    .section-content-paris ul li{
+        font-size: 1em;
+    }
+}
+@media (max-width: 600px) {
+    .section-paris .imgBx{
+        padding: 40px;
+    }
+    .section-paris .imgBx .content h2{
+        font-size: 4em;
+    }
+    .section-content-paris{
+        padding: 60px 20px 100px;
+    }
+    .section-content-paris p{
+        font-size: 14px;
+    }
+    .section-content-paris ul li{
+        font-size: 14px;
     }
 }
 
@@ -2686,15 +2758,17 @@ body.dark .footer .row .inform span{
     background-blend-mode: screen;
 }
 .page-thailand .section-thailand .content{
-    max-width: 700px;
+    width: 700px;
 }
 .page-thailand .section-thailand  .content h2{
     font-size: 3em;
     color: #fff;
+    display: inline-block;
 }
 .page-thailand .section-thailand .content p{
     font-size: 1.2em;
     color: #fff;
+    display: inline-block;
 }
 .page-thailand .section-thailand .wave{
     position: absolute;
@@ -2706,7 +2780,7 @@ body.dark .footer .row .inform span{
     color: #fff;
 }
 .page-thailand .section-thailand-content h2{
-    font-size: 5em;
+    font-size: 4em;
     font-weight: 600;
     font-family: sans-serif;
     padding-bottom: 20px;
@@ -2736,10 +2810,6 @@ body.dark .footer .row .inform span{
 .section-thailand-content.active .paragrah{
     display: block;
 }
-
-
-
-
 
 
 /* *************** start index3 styling *************** */
@@ -2851,4 +2921,78 @@ body.dark .footer .row .inform span{
 }
 .section2-australia.active .paragrah{
     display: block;
+}
+
+@media (max-width: 920px) {
+    .page-thailand .section-thailand, .section-australia.section2-australia{
+        padding: 100px 60px;
+    }
+    .page-thailand .section-thailand .content{
+        width: 100%;
+    }
+    .page-thailand .section-thailand-content{
+        margin: 20px 50px;
+    }
+    .page-thailand .section-thailand-content h2, .section2-australia h2{
+        font-size: 3em;
+    }
+    .page-thailand .section-thailand-content h3, .section2-australia h3{
+        font-size: 2em;
+    }
+    .page-thailand .section-thailand-content p{
+        font-size: 1.3em;
+    }
+    .page-thailand .section-thailand-content .land, .section2-australia .land{
+        font-size: 1.1em;
+    }
+    .section-australia h1{
+        font-size: 6em;
+    }
+}
+@media (max-width: 768px) {
+    .page-thailand .section-thailand, .section-australia.section2-australia{
+        padding: 150px 40px 40px;
+    }
+    .page-thailand .section-thailand  .content h2, .section2-australia h2{
+        font-size: 2em;
+    }
+    .page-thailand .section-thailand .content p, .section2-australia p{
+        font-size: 1em;
+    }
+    .page-thailand .section-thailand-content{
+        margin: 20px 20px;
+    }
+    .page-thailand .section-thailand-content h2{
+        font-size: 2.5em;
+    }
+    .page-thailand .section-thailand-content h3, .section2-australia h3{
+        font-size: 1.5em;
+    }
+    .page-thailand .section-thailand-content p{
+        font-size: 1.1em;
+    }
+    .page-thailand .section-thailand-content .land, .section2-australia .land{
+        font-size: 1em;
+        padding-left: 15px;
+    }
+    .section-australia h1{
+        font-size: 5em;
+    }
+}
+@media (max-width: 600px) {
+    .page-thailand .section-thailand, .section-australia.section2-australia{
+        padding: 170px 20px 40px;
+    }
+    .page-thailand .section-thailand  .content h2, .section2-australia h2{
+        font-size: 2em;
+    }
+    .page-thailand .section-thailand-content h3{
+        font-size: 1.5em;
+    }
+    .page-thailand .section-thailand-content p{
+        font-size: 1.1em;
+    }
+    .section-australia h1{
+        font-size: 4em;
+    }
 }
