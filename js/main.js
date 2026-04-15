@@ -317,8 +317,6 @@ submitBtn.addEventListener("click", function (e) {
     document.getElementById("name-users").innerText =
         "Hello " + user.firstName + " " + user.lastName;
 
-    document.getElementById("phone-user").innerText = user.phone;
-
     popup2.classList.remove("active");
 });
 
