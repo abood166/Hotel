@@ -37,7 +37,7 @@ body.dark{
     width: 10px;
     height: 100%;
     background: rgba(0, 0, 0, .2);
-    z-index: 100000;
+    z-index: 100;
 }
 #scrollBar1{
     position: fixed;
@@ -46,7 +46,7 @@ body.dark{
     width: 10px;
     height: 100%;
     background: linear-gradient(to top, #008aff, #00ffe7);
-    z-index: 100000;
+    z-index: 100;
     animation: animate3 5s linear infinite;
 }
 @keyframes animate3 {
@@ -148,44 +148,6 @@ body.dark{
     opacity: 0;
     transition: 1s;
     pointer-events: none;
-}
-/* ChatBot */
-.chat_icon{
-    position: fixed;
-    left: 30px;
-    bottom: 0px;
-    font-size: 70px;
-    color: #27ae60;
-    cursor: pointer;
-    z-index: 1000;
-}
-.chat_box{
-    position: fixed;
-    left: 20px;
-    bottom: 100px;
-    width: 400px;
-    height: 40vh;
-    background: #dedede;
-    z-index: 1000;
-    transition: all 0.3s ease-out;
-    transform: scaleY(0);
-    border-radius: 10px;
-    border: 1px solid #27ae60;
-    overflow-y: auto;
-}
-.chat_box.active{
-    transform: scaleY(1);
-}
-.hidden{
-    display: none !important;
-}
-.conv-form-wrapper textarea{
-    height: 30px;
-    overflow: hidden;
-    resize: none;
-}
-#messages{
-    padding: 20px;
 }
 /* *************** start scroll-top-button styling *************** */
 .scroll-top{

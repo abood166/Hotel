@@ -35,51 +35,6 @@
     <div class="scroll-top" onclick="scrollToTop();">
         <i class="fas fa-arrow-up"></i>
     </div>
-    <!-- chatBot -->
-    <div class="chat_icon">
-        <i class="fas fa-comments"></i>
-    </div>
-    <div class="chat_box">
-        <div class="conv-form-wrapper">
-            <form action="" method="get" class="hidden">
-                <select name="category" data-conv-question="Hello! How can I help you">
-                    <option value="webDevelopment">Website Development ?</option>
-                    <option value="digitalMarketing">Digital Marketing ?</option>
-                </select>
-                <div data-conv-fork="category">
-                    <div data-conv-case="Website Development ?">
-                        <input type="text" name="domain_name" data-conv-question="Please, tell me your domain name">
-                    </div>
-                </div>
-                <div data-conv-fork="category">
-                    <div data-conv-case="Digital Marketing ?">
-                        <input type="text" name="company_name" data-conv-question="Please, tell me your company name">
-                    </div>
-                </div>
-                <input type="text" name="domain_name" data-conv-question="Please, tell me your domain name">
-                <input data-conv-question="Type in your e-mail"
-                    data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
-                    id="email" type="email" name="email" required placeholder="What's your e-mail?">
-                <input data-conv-question="Now tell me a secret (like a password)" type="password" data-minlength="6"
-                    id="senha" name="password" required placeholder="password">
-                <select data-conv-question="Selects also support callback functions. For example, try one of these:">
-                    <option value="google" data-callback="google">Google</option>
-                    <option value="bing" data-callback="bing">Bing</option>
-                </select>
-                <select name="callbackTest"
-                    data-conv-question="You can do some cool things with callback functions. Want to rollback to the 'programmer' question before?">
-                    <option value="yes" data-callback="rollback">Yes</option>
-                    <option value="no" data-callback="restore">No</option>
-                </select>
-                <select
-                    data-conv-question="This is it! If you like me, consider donating! If you need support, contact me. When the form gets to the end, the plugin submits it normally, like you had filled it."
-                    id="">
-                    <option value="">Awesome!</option>
-                </select>
-            </form>
-        </div>
-    </div>
-    <!-- chatBot -->
     <!-- start section icons -->
     <div class="section-icons">
         <div class="container">
