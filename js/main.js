@@ -71,117 +71,6 @@ $(window).on("load", function () {
     }
 
 });
-// creative page mouse-scroll Progress Bar
-let cursorMeter = document.getElementById('cursorMeter');
-document.addEventListener('mousemove', function (e) {
-    cursorMeter.style.top = e.clientY + 'px';
-    cursorMeter.style.left = e.clientX + 'px';
-})
-let scroll = document.getElementById('scrollBar1');
-let persent = document.getElementById('persent');
-let scrollBar = document.getElementById('scrollBar');
-let totalHeight2 = document.body.scrollHeight - window.innerHeight;
-window.onscroll = function () {
-    let Progress = (window.pageYOffset / totalHeight2) * 100;
-    scrollBar.style.width = Progress + "%";
-    persent.innerHTML = "Page Scrolled " + Math.round(Progress) + "%";
-    // creative page scroll Progress Bar
-    let scrollHeight1 = (window.pageYOffset / totalHeight2) * 100;
-    scroll.style.height = scrollHeight1 + "%";
-}
-
-
-
-
-
-
-
-
-
-
-
-// add notification in the website
-setTimeout(function () {
-    document.querySelector('.notify-alert-box').style.top = '0'
-}, 1000);
-document.querySelector('#notify-button').onclick = async () => {
-    localStorage.setItem('notify', 'true');
-    notifyTrue();
-    notifyOption()
-}
-function notifyTrue() {
-    if (localStorage.getItem('notify', 'true')) {
-        document.querySelector('.notify-alert-box').style.display = 'none'
-    }
-}
-notifyTrue();
-document.querySelector('#notify-cancel-button').onclick = async () => {
-    localStorage.setItem('notify', 'false');
-    notifyFalse();
-}
-function notifyFalse() {
-    if (localStorage.getItem('notify', 'true')) {
-        document.querySelector('.notify-alert-box').style.display = 'none'
-    }
-}
-notifyFalse();
-function showNotification() {
-    var NotificationBody = new Notification('New message for Google', {
-        body: 'Google World',
-        icon: 'image/google.png'
-    })
-    NotificationBody.onclick = (e) => {
-        window.location.href = 'https://google.com'
-    }
-}
-function showNotification2() {
-    var NotificationBody = new Notification('New message for Youtube', {
-        body: 'Youtube World',
-        icon: 'image/youtube.png'
-    })
-    NotificationBody.onclick = (e) => {
-        window.location.href = 'http://youtube.com'
-    }
-}
-function showNotification3() {
-    var NotificationBody = new Notification('New message for Hotels', {
-        body: 'Hotels World',
-        icon: 'image/logo.png'
-    })
-    NotificationBody.onclick = (e) => {
-        window.location.href = 'http://127.0.0.1:5502/#'
-    }
-}
-function notifyOption() {
-    if (localStorage.notify == 'true') {
-        if (Notification.permission == 'granted') {
-            //showNotification();
-            if (localStorage.notifyMessage === undefined) {
-                localStorage.setItem("notifyMessage", "true");
-                showNotification();
-            }
-            if (localStorage.notifyMessage2 === undefined) {
-                localStorage.setItem("notifyMessage2", "true");
-                showNotification2();
-            }
-            if (localStorage.notifyMessage3 === undefined) {
-                localStorage.setItem("notifyMessage3", "true");
-                showNotification3();
-            }
-        } else if (Notification.permission !== 'denied') {
-            Notification.requestPermission().then(permission => {
-                if (permission == 'granted') {
-                    if (localStorage.notifyMessage === undefined) {
-                        localStorage.setItem("notifyMessage", "true");
-                        showNotification();
-                    }
-                }
-            })
-        }
-    }
-}
-notifyOption();
-
 // make a model
 function popupToggle() {
     const popup = document.getElementById('popup');
@@ -330,8 +219,6 @@ window.addEventListener("load", function () {
 
         document.getElementById("name-users").innerText =
             "Hello " + user.firstName + " " + user.lastName;
-
-        document.getElementById("phone-user").innerText = user.phone;
     }
 
 });
@@ -417,55 +304,6 @@ function validationPassword() {
         passText.innerHTML = "";
     }
 }
-
-// chat
-$(document).ready(function () {
-    $('.chat_icon').click(function (event) {
-        $('.chat_box').toggleClass('active');
-    })
-    $('.conv-form-wrapper').convform({selectInputStyle: 'disable'});
-})
-function google(stateWrapper, ready) {
-    window.open("https://google.com");
-    ready();
-}
-function bing(stateWrapper, ready) {
-    window.open("https://bing.com");
-    ready();
-}
-var rollbackTo = false;
-var originalState = false;
-function storeState(stateWrapper, ready) {
-    rollbackTo = stateWrapper.current;
-    console.log("storeState called: ",rollbackTo);
-    ready();
-}
-function rollback(stateWrapper, ready) {
-    console.log("rollback called: ", rollbackTo, originalState);
-    console.log("answers at the time of user input: ", stateWrapper.answers);
-    if(rollbackTo!=false) {
-        if(originalState==false) {
-            originalState = stateWrapper.current.next;
-                console.log('stored original state');
-        }
-        stateWrapper.current.next = rollbackTo;
-        console.log('changed current.next to rollbackTo');
-    }
-    ready();
-}
-function restore(stateWrapper, ready) {
-    if(originalState != false) {
-        stateWrapper.current.next = originalState;
-        console.log('changed current.next to originalState');
-    }
-    ready();
-}
-jQuery(function($){
-    convForm = $('#chat').convform({selectInputStyle: 'disable'});
-    console.log(convForm);
-});
-
-
 
 // make open nav
 $(document).ready(function () {

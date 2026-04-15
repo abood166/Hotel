@@ -104,38 +104,6 @@ body.dark{
         background: linear-gradient(to top, #0088ffe1, #00ffe5e1);
     }
 }
-/* *************** start notification styling *************** */
-.notify-alert-box{
-    width: 400px;
-    position: fixed;
-    left: 50%;
-    margin-left: -200px;
-    top: 0;
-    padding: 20px;
-    z-index: 100000;
-    background: #024e73;
-    color: #333;
-    transition: all 0.3s ease-in-out;
-}
-.notify-alert-box{
-    color: #fff;
-}
-.notify-alert-box img{
-    width: 70px;
-    float: left;
-    margin-right: 10px;
-}
-.notify-alert-box .buttons{
-    text-align: right;
-}
-.notify-alert-box .buttons button{
-    background: #024e73;
-    color: #fff;
-    border: 0;
-    padding: 8px 15px;
-    font-size: 18px;
-    cursor: pointer;
-}
 /* *************** start preloader styling *************** */
 .preloader{
     position: fixed;
