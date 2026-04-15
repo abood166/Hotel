@@ -77,6 +77,14 @@ body.dark{
     background: linear-gradient(to top, #008aff, #00ffe7);
     filter: blur(30px);
 }
+@media(max-width: 756px) {
+    #scrollPath1{
+        z-index: 10;
+    }
+    #scrollBar1{
+        z-index: 10;
+    }
+}
 /* *************** start notification styling *************** */
 .notify-alert-box{
     width: 400px;
