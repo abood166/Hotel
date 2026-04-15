@@ -79,10 +79,10 @@ body.dark{
 }
 @media(max-width: 756px) {
     #scrollPath1{
-        z-index: 10;
+        z-index: 1;
     }
     #scrollBar1{
-        z-index: 10;
+        z-index: 1;
     }
 }
 /* *************** start notification styling *************** */
@@ -156,6 +156,17 @@ body.dark{
     opacity: 0;
     transition: 1s;
     pointer-events: none;
+}
+@media(max-width: 756px) {
+   .preloader{
+        z-index: 10000000000;
+    }
+    .preloader::before{
+        font-size: 6em;
+    }
+    .counter{
+        font-size: 7em;
+    }
 }
 /* *************** start scroll-top-button styling *************** */
 .scroll-top{
